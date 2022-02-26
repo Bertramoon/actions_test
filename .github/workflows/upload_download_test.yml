@@ -1,11 +1,19 @@
 name: upload_download_test
 on: [push]
 jobs:
+  loadrepo:
+    runs-on: ubuntu-18.04
+    name: load reposity
+    steps:
+      - name: Checkout
+      uses: actions/checkout@v2
+      - name: list file
+      run: ls
   upload-job:
     runs-on: ubuntu-18.04
     name: Save file
     steps:
-      - name: list parents file
+      - name: list file
         run: ls
       - name: create file
         run: echo "this is bertramoon's test" >> my_upload_download.txt
@@ -25,7 +33,7 @@ jobs:
           name: my_upload_download
       - name: list pwd
         run: pwd
-      - name: list parents file
+      - name: list file
         run: ls
 
         
