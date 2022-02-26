@@ -1,15 +1,16 @@
 name: upload_download_test
 on: [push]
 jobs:
-  download-job:
-    runs-on: ubuntu-18.04
-    name: Download file
+  example-job:
+    name: Save output
     steps:
-      - name: Download a file
-        run: wget https://github.com/Bertramoon/actions_test/suites/5456169330/artifacts/173517005
-      - name: list pwd
-        run: pwd
-      - name: list file
-        run: ls
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-log-file
+          path: output.log
 
         
