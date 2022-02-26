@@ -13,7 +13,7 @@ jobs:
   download-job:
     runs-on: ubuntu-18.04
     name: Download file
-    needs: my_upload_download
+    needs: Save file
     steps:
       - name: Download a artifact
         uses: actions/download-artifact@v2
