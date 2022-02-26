@@ -1,0 +1,19 @@
+name: upload_download_test
+on: [push]
+jobs:
+  upload-job:
+    name: Save file
+    steps:
+      - name: Upload my_upload_download.txt
+        uses: actions/upload-artifact@v2
+        with:
+          name: my_upload_download
+          path: my_upload_download.txt
+  download-job:
+    name: Download file
+    steps:
+      - name: Download a artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: my_upload_download
+        needs: my_upload_download
