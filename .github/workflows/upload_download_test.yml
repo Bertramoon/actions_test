@@ -2,6 +2,7 @@ name: upload_download_test
 on: [push]
 jobs:
   upload-job:
+    runs-on: ubuntu-18.04
     name: Save file
     steps:
       - name: Upload my_upload_download.txt
@@ -10,10 +11,12 @@ jobs:
           name: my_upload_download
           path: my_upload_download.txt
   download-job:
+    runs-on: ubuntu-18.04
     name: Download file
+    needs: my_upload_download
     steps:
       - name: Download a artifact
         uses: actions/download-artifact@v2
         with:
           name: my_upload_download
-        needs: my_upload_download
+    
