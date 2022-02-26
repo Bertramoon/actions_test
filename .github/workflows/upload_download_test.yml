@@ -7,8 +7,6 @@ jobs:
     steps:
       - name: Download a artifact
         uses: actions/download-artifact@v2
-        with:
-          name: my_upload_download
       - name: list pwd
         run: pwd
       - name: list file
