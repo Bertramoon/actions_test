@@ -5,13 +5,11 @@ jobs:
     runs-on: ubuntu-18.04
     name: Download file
     steps:
-      - name: Download a artifact
-        uses: actions/download-artifact@v2
+      - name: Download a file
+        runs-on: wget https://github.com/Bertramoon/actions_test/suites/5456169330/artifacts/173517005
       - name: list pwd
         run: pwd
       - name: list file
         run: ls
-      - name: load file
-        run: cat my_upload_download.txt
 
         
