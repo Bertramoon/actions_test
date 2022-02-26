@@ -6,12 +6,13 @@ jobs:
     name: load reposity
     steps:
       - name: Checkout
-      uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: list file
-      run: ls
+        run: ls
   upload-job:
     runs-on: ubuntu-18.04
     name: Save file
+    needs: loadrepo
     steps:
       - name: list file
         run: ls
@@ -25,7 +26,7 @@ jobs:
   download-job:
     runs-on: ubuntu-18.04
     name: Download file
-    needs: upload-job
+    needs: [upload-job, loadrepo]
     steps:
       - name: Download a artifact
         uses: actions/download-artifact@v2
