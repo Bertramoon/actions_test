@@ -6,7 +6,7 @@ jobs:
     name: Save file
     steps:
       - name: list parents file
-        run: ls /home/runner/work/actions_test
+        run: ls
       - name: create file
         run: echo "this is bertramoon's test" >> my_upload_download.txt
       - name: Upload my_upload_download.txt
@@ -26,6 +26,6 @@ jobs:
       - name: list pwd
         run: pwd
       - name: list parents file
-        run: ls /home/runner/work/actions_test
+        run: ls
 
         
