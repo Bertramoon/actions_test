@@ -3,14 +3,11 @@ on: [push]
 jobs:
   example-job:
     runs-on: ubuntu-18.04
-    name: Save output
+    name: Download output
     steps:
-      - name: create file
-        run: echo "1+1=2" > output.log
-      - name: Upload output file
-        uses: actions/upload-artifact@v2
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
         with:
           name: output-log-file
-          path: output.log
 
         
