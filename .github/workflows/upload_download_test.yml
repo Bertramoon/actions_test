@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-18.04
     name: Save file
     steps:
-      - name: list pwd
-        run: pwd
+      - name: list parents file
+        run: ls /home/runner/work/actions_test
       - name: create file
         run: echo "this is bertramoon's test" >> my_upload_download.txt
       - name: Upload my_upload_download.txt
@@ -25,7 +25,7 @@ jobs:
           name: my_upload_download
       - name: list pwd
         run: pwd
-      - name: list file
-        run: ls
+      - name: list parents file
+        run: ls /home/runner/work/actions_test
 
         
