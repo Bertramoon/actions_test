@@ -5,6 +5,10 @@ jobs:
     runs-on: ubuntu-18.04
     name: Save file
     steps:
+      - name: list pwd
+        run: pwd
+      - name: create file
+        run: echo "this is bertramoon's test" >> my_upload_download.txt
       - name: Upload my_upload_download.txt
         uses: actions/upload-artifact@v2
         with:
@@ -19,4 +23,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: my_upload_download
-    
+      - name: list pwd
+        run: pwd
+      - name: list file
+        run: ls
+
+        
