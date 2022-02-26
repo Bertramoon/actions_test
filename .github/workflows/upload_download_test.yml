@@ -5,9 +5,8 @@ jobs:
     runs-on: ubuntu-18.04
     name: Save output
     steps:
-      - shell: bash
-        run: |
-          expr 1 + 1 > output.log
+      - name: create file
+        run: echo "1+1=2" > output.log
       - name: Upload output file
         uses: actions/upload-artifact@v2
         with:
