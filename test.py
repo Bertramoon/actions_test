@@ -1,3 +1,3 @@
 import os
 
-print(os.getenv("a"))
+print(os.getenv("A"))
