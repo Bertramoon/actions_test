@@ -13,7 +13,8 @@ jobs:
           python-version: 3.7
       - name: Print Env
         env:
-          USERNAME: ${{ secrets.USERNAME }}
+          USERNAME: ${{ secrets.USERNAME }}.
+          PASSWORD: ${{ secrets.PASSOWRD }}
         run: python test.py
 
         
