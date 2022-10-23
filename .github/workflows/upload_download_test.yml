@@ -1,10 +1,16 @@
-name: upload_download_test
+name: print_env_test
 on: [push]
 jobs:
   example-job:
     runs-on: ubuntu-18.04
     name: Action Test
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
       - name: Print Env
         run: python test.py
 
