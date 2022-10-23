@@ -12,6 +12,8 @@ jobs:
         with:
           python-version: 3.7
       - name: Print Env
+        env:
+          SUPER_SECRET: ${{ secrets.USERNAME }}
         run: python test.py
 
         
