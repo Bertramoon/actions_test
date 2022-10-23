@@ -1,3 +1,5 @@
 import os
 
-print(os.getenv("A"))
+print(os.environ)
+print(os.getenv("USER"))
+print(os.getenv("PWD"))
